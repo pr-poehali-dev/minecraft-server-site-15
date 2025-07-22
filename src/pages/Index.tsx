@@ -19,8 +19,8 @@ const Index = () => {
     max: 100,
     status: 'online',
     version: '1.20.1',
-    ip: 'play.myserver.net',
-    port: 25565
+    ip: 'apollo.minecraft-hosting.net',
+    port: 25854
   });
 
   const [copied, setCopied] = useState(false);
@@ -37,7 +37,7 @@ const Index = () => {
   }, []);
 
   const copyServerIP = () => {
-    navigator.clipboard.writeText(serverStats.ip);
+    navigator.clipboard.writeText(`${serverStats.ip}:${serverStats.port}`);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -124,7 +124,7 @@ const Index = () => {
               <div className="flex items-center justify-between p-4 bg-slate-900/50 rounded-lg border border-slate-600">
                 <div>
                   <p className="text-slate-300 text-sm">IP адрес сервера:</p>
-                  <p className="text-white font-mono text-lg">{serverStats.ip}</p>
+                  <p className="text-white font-mono text-lg">{serverStats.ip}:{serverStats.port}</p>
                 </div>
                 <Button
                   onClick={copyServerIP}
@@ -202,7 +202,7 @@ const Index = () => {
             Начать играть
           </Button>
           <p className="text-slate-400 text-sm mt-4">
-            Скачай Minecraft и подключайся по IP: {serverStats.ip}
+            Скачай Minecraft и подключайся по IP: {serverStats.ip}:{serverStats.port}
           </p>
         </div>
       </div>
