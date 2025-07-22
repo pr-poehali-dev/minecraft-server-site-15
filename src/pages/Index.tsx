@@ -18,7 +18,7 @@ const Index = () => {
     online: 47,
     max: 100,
     status: 'online',
-    version: '1.20.1',
+    version: '1.21.1',
     ip: 'apollo.minecraft-hosting.net',
     port: 25854
   });
